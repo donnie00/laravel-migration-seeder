@@ -10,9 +10,11 @@ class PageController extends Controller
     public function index()
     {
         $trains = Train::all();
+        $today_trains = Train::whereDate('departure_hour', now())->get();
 
         return view('home', [
-            'trains' => $trains
+            'trains' => $trains,
+            'today_trains' => $today_trains
         ]);
     }
 }
