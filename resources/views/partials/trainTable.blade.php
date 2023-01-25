@@ -1,7 +1,3 @@
-<h1 class="my-3">
-   Today trains
-</h1>
-
 <table class="table table-info table-bordered text-center align-middle">
    <thead class="table-secondary">
       <th>Compagnia</th>
@@ -13,7 +9,7 @@
       <th>Info</th>
    </thead>
    <tbody>
-      @foreach ($today_trains as $train)
+      @foreach ($trainArray as $train)
          <tr @class([
              'table-danger' => $train->deleted,
              'table-warning' => !$train->in_time,

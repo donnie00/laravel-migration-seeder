@@ -1,6 +1,8 @@
 @extends('layout.app')
 
 @section('content')
-   @include('partials.allTrains')
-   @include('partials.todayTrains')
+   <h1 class="my-3">All trains</h1>
+   @include('partials.trainTable', ['trainArray' => $trains])
+   <h1 class="my-3">Today trains</h1>
+   @include('partials.trainTable', ['trainArray' => $today_trains])
 @endsection
